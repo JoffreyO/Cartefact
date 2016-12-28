@@ -1,0 +1,40 @@
+﻿@model ICollection<Cartefact.ViewModels.ListCarViewModel>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<div class="row">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Ref</th>
+                <th>Description</th>
+                <th>BuyingYear</th>
+                <th>Kilometers</th>
+                <th>Status</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model)
+            {
+                <tr>
+                    <td>@car.Brand</td>
+                    <td>@car.Ref</td>
+                    <td>@car.Description</td>
+                    <td>@car.BuyingYear</td>
+                    <td>@car.Kilometers</td>
+                    <td>@car.Status</td>
+                    <td>@car.Latitude</td>
+                    <td>@car.Longitude</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

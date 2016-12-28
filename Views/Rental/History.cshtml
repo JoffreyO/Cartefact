@@ -1,0 +1,59 @@
+﻿@model Cartefact.ViewModels.HistoryRentalViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>All Rentals</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Add")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Rental.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rental.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rental.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rental.EstimatedKilometers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rental.CarId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var m in Model.RentalList)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => m.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => m.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => m.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => m.EstimatedKilometers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => m.CarId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = m.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = m.Id })
+            </td>
+        </tr>
+    }
+
+</table>

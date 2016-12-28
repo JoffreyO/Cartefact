@@ -1,0 +1,37 @@
+﻿@model ICollection<Cartefact.ViewModels.ListPersonViewModel>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<div class="row">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>NickName</th>
+                <th>PassWord</th>
+                <th>DrivingHabits</th>
+                <th>DriverExperience</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td>@person.Name</td>
+                    <td>@person.NickName</td>
+                    <td>@person.Password</td>
+                    <td>@person.DrivingHabits</td>
+                    <td>@person.DriverExperience</td>
+                    <td>@Html.ActionLink("Edit", "EditPerson", "Person", new {id = person.PersonId}, new {@class = "btn btn-primary"})</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
