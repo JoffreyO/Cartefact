@@ -21,7 +21,6 @@ namespace Cartefact.ViewModels
         public float Longitude { get; set; }
 
 
-
         public static List<ListCarViewModel> GetAll()
         {
             var model = new List<ListCarViewModel>();
